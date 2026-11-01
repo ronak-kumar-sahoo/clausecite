@@ -1,0 +1,28 @@
+{"q":"How does the Act define a child?","type":"definition","sections":["2"]}
+{"q":"Who is a Data Fiduciary?","type":"definition","sections":["2"]}
+{"q":"What is a Consent Manager?","type":"definition","sections":["2","6"]}
+{"q":"What makes consent valid under the Act?","type":"lookup","sections":["6"]}
+{"q":"Can a Data Principal withdraw consent at any time?","type":"lookup","sections":["6"]}
+{"q":"What must a notice to the Data Principal contain?","type":"lookup","sections":["5"]}
+{"q":"What are the certain legitimate uses for processing personal data without consent?","type":"lookup","sections":["7"]}
+{"q":"What must a Data Fiduciary do when consent is withdrawn?","type":"multi","sections":["6","8"]}
+{"q":"Is tracking or behavioural monitoring of children allowed?","type":"lookup","sections":["9"]}
+{"q":"Who has to appoint a Data Protection Officer?","type":"lookup","sections":["10"]}
+{"q":"What rights does a Data Principal have to correct or erase personal data?","type":"lookup","sections":["12"]}
+{"q":"Can a person nominate someone to exercise their rights after death or incapacity?","type":"lookup","sections":["14"]}
+{"q":"What are the duties of a Data Principal?","type":"lookup","sections":["15"]}
+{"q":"Does the Act apply to processing outside India?","type":"lookup","sections":["3"]}
+{"q":"Can startups be exempted from some obligations?","type":"lookup","sections":["17"]}
+{"q":"Is processing for research or statistical purposes exempt?","type":"lookup","sections":["17"]}
+{"q":"How long is the term of office of the Board's Chairperson and Members?","type":"lookup","sections":["20"]}
+{"q":"Within how many days must an appeal be filed with the Appellate Tribunal?","type":"lookup","sections":["29"]}
+{"q":"Can the Central Government block public access to a Data Fiduciary's information?","type":"lookup","sections":["37"]}
+{"q":"What is the maximum penalty for failing to take reasonable security safeguards against a data breach?","type":"multi","sections":["Schedule","8"]}
+{"q":"What is the maximum penalty for breaching the obligations relating to children?","type":"multi","sections":["Schedule","9"]}
+{"q":"What is the maximum penalty for breaching a Data Principal's duties?","type":"multi","sections":["Schedule","15"]}
+{"q":"How much compensation must a Data Fiduciary pay to an affected individual?","type":"unanswerable","sections":[]}
+{"q":"Which encryption standard must Data Fiduciaries use?","type":"unanswerable","sections":[]}
+{"q":"Which companies have been fined under this Act so far?","type":"unanswerable","sections":[]}
+{"q":"Who won the last cricket world cup?","type":"offtopic","sections":[]}
+{"q":"Write a Python function to reverse a string.","type":"offtopic","sections":[]}
+{"q":"What is the capital of France?","type":"offtopic","sections":[]}
