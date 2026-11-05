@@ -2,7 +2,7 @@ import re, sys
 from typing import TypedDict, List
 from langgraph.graph import StateGraph, START, END
 from llm import get_llm
-from retrieval import search
+from retrieval import search, _db, P
 
 class State(TypedDict, total=False):
     question: str
@@ -21,7 +21,7 @@ Reply with exactly one word: IN if the question is about that Act or personal da
 Question: {question}"""
 
 GEN = """Answer using ONLY the context below, which is from India's DPDP Act, 2023.
-Cite sections like [Section 9]. If the context does not contain the answer, reply exactly: Not found in the Act.
+Cite only sections whose headers appear in the context, like [Section 9], and use [Schedule] for the penalty table. Never cite a section that is not in the context. If the context does not contain the answer, reply exactly: Not found in the Act.
 Do not give legal advice.
 
 Context:
@@ -31,8 +31,8 @@ Question: {question}
 Answer:"""
 
 def classify(s):
-    r = get_llm().invoke(SCOPE.format(question=s["question"])).content.strip().upper()
-    return {"in_scope": r.startswith("IN"), "attempts": 0, "retries": 0}
+    dist = _db.similarity_search_with_score(P + s["question"], k=1)[0][1]
+    return {"in_scope": dist < 0.85, "attempts": 0, "retries": 0}
 
 GRADE = """Do these excerpts from India's DPDP Act, 2023 contain enough information to answer the question? Reply with exactly one word: YES or NO.
 Excerpts:
@@ -46,7 +46,7 @@ def retrieve(s):
     return {"docs": search(s.get("query") or s["question"], k=4)}
 
 def grade(s):
-    ctx = "\n\n".join(d.page_content[:600] for d in s["docs"])
+    ctx = "\n\n".join(d.page_content for d in s["docs"])    
     r = get_llm().invoke(GRADE.format(context=ctx, question=s["question"])).content.strip().upper()
     return {"relevant": r.startswith("YES")}
 
@@ -67,6 +67,7 @@ def verify(s):
     if a.lower().startswith("not found"):
         return {"verified": True}
     cited = set(re.findall(r"[Ss]ection\s+(\d{1,2})", a))
+    if re.search(r"(?<!Eighth )\bSchedule\b", a): cited.add("Schedule")   
     have = {d.metadata["section"] for d in s["docs"]}
     ok = bool(cited) and cited <= have
     out = {"verified": ok}
@@ -83,7 +84,7 @@ FAITH = """Excerpts from India's DPDP Act, 2023:
 Answer to check:
 {answer}
 
-Is every factual claim in the answer supported by the excerpts above? Reply with exactly one word: YES or NO."""
+Reply NO only if the answer states something that contradicts the excerpts or is not in them. Summaries and paraphrases of the excerpts are fine. Reply with exactly one word: YES or NO."""
 
 def faithful(s):
     if s["answer"].lower().startswith("not found"):

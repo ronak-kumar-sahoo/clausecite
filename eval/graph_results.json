@@ -1,0 +1,62 @@
+[
+  {
+    "q": "How does the Act define a child?",
+    "type": "definition",
+    "ok": true,
+    "answer": "A \u201cchild\u201d is defined as an individual who has not completed the age of eighteen years.\u202f[Section\u202f2]"
+  },
+  {
+    "q": "What makes consent valid under the Act?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Consent is valid only when it meets the statutory requirements set out in **Section\u202f6** of the DPDP Act:\n\n* It must **not contain any term that infringes the provisions of the Act or any other law**; any such infringing part is void to the extent of the infringement\u202f[Section\u202f6].  \n* The request for consent must be **presented in clear, plain language**, give the data principal the option to receive it in English or any language listed in the Eighth Schedule, and provide the contact details of the Data Protection Officer (or another authorised person) for exercising her rights\u202f[Section\u202f6].  \n* Where consent is the basis for processing, the data principal must have the **right to withdraw her consent at any time**, with the same ease as it was given\u202f[Section\u202f6]."
+  },
+  {
+    "q": "What are the certain legitimate uses for processing personal data without consent?",
+    "type": "lookup",
+    "ok": false,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "Who has to appoint a Data Protection Officer?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "The Significant Data Fiduciary must appoint a Data Protection Officer.\u202f[Section\u202f10]"
+  },
+  {
+    "q": "What are the duties of a Data Principal?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "A Data Principal must:\n\n- Comply with all applicable laws while exercising rights under this Act;  \n- Not impersonate another person when providing personal data for a specified purpose;  \n- Not suppress any material information when providing personal data for any document, unique identifier, proof of identity or proof of address issued by the State or its instrumentalities;  \n- Not register a false or frivolous grievance or complaint with a Data Fiduciary or the Board; and  \n- Furnish only verifiably authentic information when exercising the right to correction or erasure.  \n\n[Section 15]"
+  },
+  {
+    "q": "Is processing for research or statistical purposes exempt?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes.\u202fSection\u202f17\u202f(b) provides that processing that is\u202fnecessary for research, archiving\u202for\u202fstatistical purposes\u202fis exempt\u202fprovided the personal data is not used to take any decision specific to a Data Principal and the processing complies with any prescribed standards\u3010Section\u202f17\u3011."
+  },
+  {
+    "q": "Can the Central Government block public access to a Data Fiduciary's information?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. Under **Section\u202f37** the Central Government (or an officer specially authorised by it) may, after receiving a written reference from the Board that a Data Fiduciary has been penalised on two or more occasions and after giving the Data Fiduciary an opportunity to be heard, direct any Central Government agency or intermediary to block public access to information generated, transmitted, received, stored or hosted by that Data Fiduciary, when satisfied that such blocking is necessary or expedient in the public interest\u3010Section\u202f37\u3011."
+  },
+  {
+    "q": "What is the maximum penalty for breaching a Data Principal's duties?",
+    "type": "multi",
+    "ok": true,
+    "answer": "The maximum penalty for breaching a Data Principal\u2019s duties under\u202fsection\u202f15 is up to **\u20b9\u202f10,000**\u3010Schedule\u3011."
+  },
+  {
+    "q": "Which companies have been fined under this Act so far?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "What is the capital of France?",
+    "type": "offtopic",
+    "ok": true,
+    "answer": "I can only answer questions about the DPDP Act, 2023."
+  }
+]
