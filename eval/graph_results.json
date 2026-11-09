@@ -3,19 +3,55 @@
     "q": "How does the Act define a child?",
     "type": "definition",
     "ok": true,
-    "answer": "A \u201cchild\u201d is defined as an individual who has not completed the age of eighteen years.\u202f[Section\u202f2]"
+    "answer": "A \u201cchild\u201d is defined as an individual who has not completed the age of eighteen years.\u202f[Section 2]"
+  },
+  {
+    "q": "Who is a Data Fiduciary?",
+    "type": "definition",
+    "ok": true,
+    "answer": "A **Data Fiduciary** is any person who, alone or together with others, determines the purpose and means of processing personal data.\u202f[Section 2]"
+  },
+  {
+    "q": "What is a Consent Manager?",
+    "type": "definition",
+    "ok": true,
+    "answer": "A\u202fConsent\u202fManager is a person who is registered with the Data Protection Board of India and serves as a single point of contact that enables a Data\u202fPrincipal to give, manage, review and withdraw her consent via an accessible, transparent and interoperable platform.\u202f[Section\u202f2]\u202f[Section\u202f6]"
   },
   {
     "q": "What makes consent valid under the Act?",
     "type": "lookup",
     "ok": true,
-    "answer": "Consent is valid only when it meets the statutory requirements set out in **Section\u202f6** of the DPDP Act:\n\n* It must **not contain any term that infringes the provisions of the Act or any other law**; any such infringing part is void to the extent of the infringement\u202f[Section\u202f6].  \n* The request for consent must be **presented in clear, plain language**, give the data principal the option to receive it in English or any language listed in the Eighth Schedule, and provide the contact details of the Data Protection Officer (or another authorised person) for exercising her rights\u202f[Section\u202f6].  \n* Where consent is the basis for processing, the data principal must have the **right to withdraw her consent at any time**, with the same ease as it was given\u202f[Section\u202f6]."
+    "answer": "Consent is valid only when it does not contain any term that breaches the provisions of the DPDP Act or any other law in force; such infringing terms are deemed invalid\u202f[Section\u202f6(2)].  \nIn addition, a valid consent request must be presented to the Data\u202fPrincipal in clear, plain language, must be available in English or any language listed in the Eighth Schedule of the Constitution, and must include the contact details of the Data\u202fProtection Officer or another authorised person who can respond to the Data\u202fPrincipal\u2019s communications\u202f[Section\u202f6(3)].  \nThe Data\u202fPrincipal must also be able to withdraw the consent at any time with a level of ease comparable to that with which the consent was originally given\u202f[Section\u202f6(4)].  \n\n[Section\u202f6]"
+  },
+  {
+    "q": "Can a Data Principal withdraw consent at any time?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. A Data Principal has the right to withdraw her consent at any time, and the withdrawal must be as easy as giving the consent in the first place.\u202f[Section 6]"
+  },
+  {
+    "q": "What must a notice to the Data Principal contain?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "A notice that the Data Fiduciary must give to a Data\u202fPrincipal must inform her of:  \n\n1. **The personal data** that is to be processed and **the purpose** for which it is proposed to be processed;  \n2. **How she may exercise her rights** under sub\u2011section\u202f(4) of section\u202f6 and under section\u202f13; and  \n3. **How she may make a complaint** to the Board, in the manner and form that may be prescribed.  \n\n[Section 5]"
   },
   {
     "q": "What are the certain legitimate uses for processing personal data without consent?",
     "type": "lookup",
-    "ok": false,
-    "answer": "Not found in the Act."
+    "ok": true,
+    "answer": "The Act allows a data fiduciary to process personal data without obtaining fresh consent in the following \u201ccertain legitimate uses\u201d:\n\n* When the personal data is already held in digital form (or in non\u2011digital form that is later digitised) in any database, register, book or other document maintained by the State or any of its instrumentalities and that database has been notified by the Central Government. The processing must follow the standards and policy issued by the Central Government or any other law governing personal data.\u202f[Section\u202f7]\n\n* When the State or any of its instrumentalities need to provide or issue a prescribed subsidy, benefit, service, certificate, licence or permit to the Data Principal, provided the Data Principal had previously consented to the processing of her personal data for that purpose.\u202f[Section\u202f7]\n\nThese uses are recognised as \u201ccertain legitimate uses\u201d under the Act and do not require a new consent at the time of processing.\u202f[Section\u202f4]"
+  },
+  {
+    "q": "What must a Data Fiduciary do when consent is withdrawn?",
+    "type": "multi",
+    "ok": true,
+    "answer": "When a Data Principal withdraws her consent, the Data Fiduciary must, within a reasonable time, stop processing that\u202fData\u202fPrincipal\u2019s personal data and must also require any Data Processors it uses to stop processing that data, unless such processing is otherwise required or authorised under the Act or any other law.\u202f[Section\u202f6]"
+  },
+  {
+    "q": "Is tracking or behavioural monitoring of children allowed?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "No. A Data Fiduciary is prohibited from undertaking tracking or behavioural monitoring of children.\u202f[Section\u202f9]"
   },
   {
     "q": "Who has to appoint a Data Protection Officer?",
@@ -24,34 +60,106 @@
     "answer": "The Significant Data Fiduciary must appoint a Data Protection Officer.\u202f[Section\u202f10]"
   },
   {
+    "q": "What rights does a Data Principal have to correct or erase personal data?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "A Data\u202fPrincipal may ask a Data\u202fFiduciary to correct, complete, update or erase any of her personal data that she has previously consented to be processed.  \n* For correction, completion or updating, the Data\u202fFiduciary must respectively correct inaccurate or misleading data, complete any missing data and update the data as requested.  \n* For erasure, the Data\u202fPrincipal must submit a request in the prescribed manner; the Data\u202fFiduciary must erase the data unless it must be retained for the specified purpose or to comply with any law.  \n\n[Section 12]"
+  },
+  {
+    "q": "Can a person nominate someone to exercise their rights after death or incapacity?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. Under the Act a Data Principal may nominate another individual to exercise the Data Principal\u2019s rights if the Data Principal dies or becomes incapacitated.\u202f[Section\u202f14]"
+  },
+  {
     "q": "What are the duties of a Data Principal?",
     "type": "lookup",
     "ok": true,
     "answer": "A Data Principal must:\n\n- Comply with all applicable laws while exercising rights under this Act;  \n- Not impersonate another person when providing personal data for a specified purpose;  \n- Not suppress any material information when providing personal data for any document, unique identifier, proof of identity or proof of address issued by the State or its instrumentalities;  \n- Not register a false or frivolous grievance or complaint with a Data Fiduciary or the Board; and  \n- Furnish only verifiably authentic information when exercising the right to correction or erasure.  \n\n[Section 15]"
   },
   {
+    "q": "Does the Act apply to processing outside India?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. The Act extends to processing of digital personal data outside India when that processing is connected with offering goods or services to Data Principals within India\u202f[Section\u202f3]. Additionally, the Act contains special provisions governing such cross\u2011border processing, including the Central Government\u2019s power to restrict transfers of personal data abroad\u202f[Section\u202f16].\u202f[Section\u202f3, Section\u202f16]"
+  },
+  {
+    "q": "Can startups be exempted from some obligations?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. Under Section\u202f17(3) the Central Government may, based on the volume and nature of personal data processed, notify startups (defined as private limited companies, partnership firms or LLPs meeting the government\u2019s startup criteria) as Data Fiduciaries to which the provisions of section\u202f5, sub\u2011sections\u202f(3) and\u202f(7) of section\u202f8 and sections\u202f10 and\u202f11 do **not** apply. This means startups can be exempted from those specific obligations.\u202f[Section\u202f17]"
+  },
+  {
     "q": "Is processing for research or statistical purposes exempt?",
     "type": "lookup",
     "ok": true,
-    "answer": "Yes.\u202fSection\u202f17\u202f(b) provides that processing that is\u202fnecessary for research, archiving\u202for\u202fstatistical purposes\u202fis exempt\u202fprovided the personal data is not used to take any decision specific to a Data Principal and the processing complies with any prescribed standards\u3010Section\u202f17\u3011."
+    "answer": "Yes.\u202fProcessing that is\u202fnecessary for research, archiving\u202for\u202fstatistical purposes\u202fis exempt\u202fprovided the personal data is not used to take any decision specific to a Data Principal and the processing follows any prescribed standards\u202f[Section\u202f17]."
+  },
+  {
+    "q": "How long is the term of office of the Board's Chairperson and Members?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "The Chairperson and other Members of the Data Protection Board of India hold office for a term of **two years** and may be re\u2011appointed.\u202f[Section 20]"
+  },
+  {
+    "q": "Within how many days must an appeal be filed with the Appellate Tribunal?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "An appeal must be filed within **sixty days** from the date of receipt of the order or direction being appealed against. [Section 29]"
   },
   {
     "q": "Can the Central Government block public access to a Data Fiduciary's information?",
     "type": "lookup",
     "ok": true,
-    "answer": "Yes. Under **Section\u202f37** the Central Government (or an officer specially authorised by it) may, after receiving a written reference from the Board that a Data Fiduciary has been penalised on two or more occasions and after giving the Data Fiduciary an opportunity to be heard, direct any Central Government agency or intermediary to block public access to information generated, transmitted, received, stored or hosted by that Data Fiduciary, when satisfied that such blocking is necessary or expedient in the public interest\u3010Section\u202f37\u3011."
+    "answer": "Yes. Under Section\u202f37, when the Board refers a case in writing\u2014showing that a Data Fiduciary has been penalised multiple times and that blocking its information serves the public interest\u2014the Central Government (or an officer it authorises) may, after giving the Data Fiduciary a chance to be heard, direct a Central Government agency or any intermediary to block public access to that information.\u202f[Section\u202f37]"
+  },
+  {
+    "q": "What is the maximum penalty for failing to take reasonable security safeguards against a data breach?",
+    "type": "multi",
+    "ok": true,
+    "answer": "The maximum penalty for failing to take reasonable security safeguards to prevent a personal data breach is up to **\u20b9250\u202fcrore**.  \n\n[Schedule]"
+  },
+  {
+    "q": "What is the maximum penalty for breaching the obligations relating to children?",
+    "type": "multi",
+    "ok": true,
+    "answer": "The maximum monetary penalty for breaching the obligations relating to children under the Act is up to two hundred crore rupees.\u202f[Schedule][Section 9]"
   },
   {
     "q": "What is the maximum penalty for breaching a Data Principal's duties?",
     "type": "multi",
     "ok": true,
-    "answer": "The maximum penalty for breaching a Data Principal\u2019s duties under\u202fsection\u202f15 is up to **\u20b9\u202f10,000**\u3010Schedule\u3011."
+    "answer": "The Act provides that a breach of the duties of a Data Principal under section\u202f15 can be penalised up to **\u20b9\u202f10,000**.\u202f[Section 15] [Schedule]"
+  },
+  {
+    "q": "How much compensation must a Data Fiduciary pay to an affected individual?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "Which encryption standard must Data Fiduciaries use?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
   },
   {
     "q": "Which companies have been fined under this Act so far?",
     "type": "unanswerable",
     "ok": true,
     "answer": "Not found in the Act."
+  },
+  {
+    "q": "Who won the last cricket world cup?",
+    "type": "offtopic",
+    "ok": true,
+    "answer": "I can only answer questions about the DPDP Act, 2023."
+  },
+  {
+    "q": "Write a Python function to reverse a string.",
+    "type": "offtopic",
+    "ok": true,
+    "answer": "I can only answer questions about the DPDP Act, 2023."
   },
   {
     "q": "What is the capital of France?",

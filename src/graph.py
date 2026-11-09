@@ -21,8 +21,7 @@ Reply with exactly one word: IN if the question is about that Act or personal da
 Question: {question}"""
 
 GEN = """Answer using ONLY the context below, which is from India's DPDP Act, 2023.
-Cite only sections whose headers appear in the context, like [Section 9], and use [Schedule] for the penalty table. Never cite a section that is not in the context. If the context does not contain the answer, reply exactly: Not found in the Act.
-Do not give legal advice.
+Cite only sections whose headers appear in the context. Put every citation in square brackets, like [Section 9] or [Section 6, Section 8], and use [Schedule] for the penalty table. Always end your answer with its citations. Never cite a section that is not in the context. If the context does not contain the answer, reply exactly: Not found in the Act.
 
 Context:
 {context}
@@ -62,12 +61,21 @@ def generate(s):
     a = get_llm().invoke(GEN.format(context=ctx, question=s["question"])).content.strip()
     return {"answer": a, "attempts": s["attempts"] + 1}
 
+def citations(a):
+    out = set()
+    for b in re.findall(r"[\[\u3010]([^\]\u3011]*)[\]\u3011]", a):
+        b = re.sub(r"\(.*?\)", "", b)
+        if re.search(r"[Ss]ections?\b", b):
+            out |= set(re.findall(r"\b(\d{1,2})\b", b))
+        if "Schedule" in b:
+            out.add("Schedule")
+    return out
+
 def verify(s):
     a = s["answer"]
     if a.lower().startswith("not found"):
         return {"verified": True}
-    cited = set(re.findall(r"[Ss]ection\s+(\d{1,2})", a))
-    if re.search(r"(?<!Eighth )\bSchedule\b", a): cited.add("Schedule")   
+    cited = citations(a)   
     have = {d.metadata["section"] for d in s["docs"]}
     ok = bool(cited) and cited <= have
     out = {"verified": ok}
