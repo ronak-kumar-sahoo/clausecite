@@ -12,6 +12,7 @@ class State(TypedDict, total=False):
     attempts: int
     verified: bool
     query: str
+    prev: List 
     retries: int
     relevant: bool
     faithful: bool    
@@ -31,18 +32,33 @@ Answer:"""
 
 def classify(s):
     dist = _db.similarity_search_with_score(P + s["question"], k=1)[0][1]
-    return {"in_scope": dist < 0.85, "attempts": 0, "retries": 0}
+    if dist < 0.85:
+        ok = True
+    elif dist >= 1.1:
+        ok = False
+    else:
+        r = get_llm().invoke(SCOPE.format(question=s["question"])).content.strip().upper()
+        m = re.search(r"\b(IN|OUT)\b", r)
+        ok = (m.group(1) == "IN") if m else True
+    return {"in_scope": ok, "attempts": 0, "retries": 0}
 
 GRADE = """Do these excerpts from India's DPDP Act, 2023 contain enough information to answer the question? Reply with exactly one word: YES or NO.
 Excerpts:
 {context}
 Question: {question}"""
 
-REWRITE = """Rewrite the question as a short search query using the vocabulary of India's DPDP Act, 2023 (for example Data Fiduciary, Data Principal, consent, personal data breach, Board, penalty). Reply with the query only.
-Question: {question}"""
+REWRITE = """The search below did not find the answer in India's DPDP Act, 2023.
+Write a different, short search query (4 to 8 words) using the Act's legal wording, for example: appeal, tribunal, security of the State, consent, erasure, Board, penalty. Do not repeat a previous query. Reply with the query only.
+Question: {question}
+Previous queries: {prev}"""
 
 def retrieve(s):
-    return {"docs": search(s.get("query") or s["question"], k=4)}
+    docs = search(s["question"], k=4)
+    if s.get("query"):
+        seen = {(d.metadata["section"], d.metadata["part"]) for d in docs}
+        docs += [d for d in search(s["query"], k=4)
+                 if (d.metadata["section"], d.metadata["part"]) not in seen]
+    return {"docs": docs}
 
 def grade(s):
     ctx = "\n\n".join(d.page_content for d in s["docs"])    
@@ -50,8 +66,9 @@ def grade(s):
     return {"relevant": r.startswith("YES")}
 
 def rewrite(s):
-    q = get_llm().invoke(REWRITE.format(question=s["question"])).content.strip()
-    return {"query": q, "retries": s.get("retries", 0) + 1}
+    prev = s.get("prev", [])
+    q = get_llm().invoke(REWRITE.format(question=s["question"], prev="; ".join(prev) or "none")).content.strip()
+    return {"query": q, "prev": prev + [q], "retries": s.get("retries", 0) + 1}
 
 def not_found(s):
     return {"answer": "Not found in the Act."}

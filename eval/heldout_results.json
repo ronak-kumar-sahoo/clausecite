@@ -1,0 +1,80 @@
+[
+  {
+    "q": "Can my employer use my data without asking me?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "An employer, like any other data fiduciary, may process your personal data only if you have **given consent** for that purpose or if the processing falls within a **\u201ccertain legitimate use\u201d** as defined in the Act.\u202fSection\u202f4 makes clear that processing is permitted only when the data principal has consented or when it is a legitimate use\u202f[Section\u202f4].\u202fSection\u202f7 specifies that a legitimate use is limited to a purpose for which you **voluntarily provided** your data and have **not indicated that you do not consent** to that use.\u202fIf neither consent nor a legitimate use applies, the employer cannot lawfully use your data without first obtaining your consent.\u202fAdditionally, if you withdraw consent, the fiduciary must cease processing (Section\u202f6)\u202f[Section\u202f6].  \n\n[Section\u202f4, Section\u202f7, Section\u202f6]"
+  },
+  {
+    "q": "My bank is opening an account for me. Do they have to tell me why they collect my data?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. When a bank (or any Data Fiduciary) requests your personal data to open an account, it must first give you a notice that specifies the personal data it will collect **and the purpose for which that data will be processed**. This requirement is set out in the Act\u2019s notice provision.\u202f[Section\u202f5]"
+  },
+  {
+    "q": "Can a 16-year-old sign up for an app on their own?",
+    "type": "multi",
+    "ok": true,
+    "answer": "No. Under the Act a \u201cchild\u201d is defined as anyone who has not completed the age of eighteen years\u202f[Section\u202f2]. For such persons, a data fiduciary must obtain verifiable consent from the parent or lawful guardian before processing their personal data\u202f[Section\u202f9]. Therefore a 16\u2011year\u2011old cannot sign up for an app on their own without parental or guardian consent.\u202f[Section\u202f9, Section\u202f2]"
+  },
+  {
+    "q": "Can an app show targeted ads to kids?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "No. Under the DPDP Act, a Data Fiduciary is prohibited from undertaking tracking, behavioural monitoring of children or any targeted advertising directed at children.\u202f[Section\u202f9]"
+  },
+  {
+    "q": "What happens if a company leaks my personal data?",
+    "type": "multi",
+    "ok": true,
+    "answer": "If a company (the Data\u202fFiduciary) suffers a personal data breach, it is required to inform the Data\u202fProtection Board and every Data\u202fPrincipal whose data has been affected, using the form and manner prescribed under the Act. The Fiduciary must also have put in place reasonable technical and organisational safeguards to prevent such breaches.  \n\n[Section\u202f8]"
+  },
+  {
+    "q": "I want my data deleted from an app I no longer use. What can I do?",
+    "type": "multi",
+    "ok": true,
+    "answer": "You can withdraw your consent and ask the app\u2011provider (the Data Fiduciary) to delete your personal data.  \nUnder **Section\u202f6(6)**, once you withdraw consent the Data Fiduciary must, within a reasonable time, stop processing your data and must also cause any Data Processor it uses to stop processing that data, unless the processing is required by law.  \nFurther, **Section\u202f8(b)** obliges the Data Fiduciary to have its Data Processor erase any personal data that it had made available for processing.  \n\nSo, you should:\n1. Use the app or contact the provider to formally withdraw your consent.  \n2. Request that the provider delete (erase) your personal data.  \n\nThe provider must then cease processing your data and ensure any processors also erase it, unless a legal requirement compels retention.  \n\n[Section\u202f6] [Section\u202f8]"
+  },
+  {
+    "q": "Who can I complain to if a company ignores my privacy request?",
+    "type": "multi",
+    "ok": true,
+    "answer": "You may lodge a complaint with the Data Protection Board of India (the Board). The notice that a data fiduciary must give you under Section\u202f5 must explain how you can make a complaint to the Board, and Section\u202f27 expressly empowers the Board to inquire into such complaints and impose penalties.\u202f[Section\u202f5]\u202f[Section\u202f27]"
+  },
+  {
+    "q": "If the Board makes a decision I disagree with, can I challenge it?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. If you are aggrieved by any order or direction issued by the Board, you may prefer an appeal before the Appellate Tribunal. The appeal must be filed within\u202f60\u202fdays of receiving the Board\u2019s order (or later, if the Tribunal is satisfied there was sufficient cause for delay) and the Tribunal will hear the parties and may confirm, modify or set aside the Board\u2019s decision\u3010Section 29\u3011."
+  },
+  {
+    "q": "Can the government use my data without my consent for national security?",
+    "type": "multi",
+    "ok": true,
+    "answer": "Yes.\u202fSection\u202f17(a) exempts the State (or any instrumentality notified by the Central Government) from the consent requirement when processing personal data \u201cin the interests of \u2026 security of the State.\u201d\u202fThus, for national\u2011security purposes the government may use your data without your consent.\u202f[Section\u202f17]"
+  },
+  {
+    "q": "Does the Act cover a foreign company that sells to Indian customers?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. The Act applies to the processing of digital personal data outside India when that processing is connected with any activity related to offering goods or services to Data Principals within India\u202f\u2014\u202fso a foreign company selling to Indian customers falls within the Act\u2019s scope.\u202f[Section 3]"
+  },
+  {
+    "q": "Is there a way to manage all my consents in one place?",
+    "type": "multi",
+    "ok": true,
+    "answer": "Yes. Under the Act, a Data\u202fPrincipal can use a **Consent Manager** to give, manage, review and withdraw all of her consents in a single, centralized manner. The Consent Manager acts on the Data\u202fPrincipal\u2019s behalf and is accountable to her.\u202f[Section\u202f6]"
+  },
+  {
+    "q": "Who is the current Chairperson of the Data Protection Board?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "What does the GDPR say about the right to be forgotten?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
+  }
+]

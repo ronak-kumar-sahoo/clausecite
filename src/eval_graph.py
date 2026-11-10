@@ -1,7 +1,8 @@
 import json, os, re, sys, time
 from graph import app
 
-rows = [json.loads(l) for l in open("eval/gold.jsonl", encoding="utf-8") if l.strip()]
+GOLD = os.getenv("GOLD", "eval/gold.jsonl")
+rows = [json.loads(l) for l in open(GOLD, encoding="utf-8") if l.strip()]
 step = int(sys.argv[1]) if len(sys.argv) > 1 else 1
 rows = rows[::step]
 res, t0, errors = [], time.time(), 0
@@ -37,5 +38,5 @@ for t in ("definition", "lookup", "multi", "unanswerable", "offtopic"):
         print(f"{t:13} {sum(x['ok'] for x in g)}/{len(g)}")
 model = os.getenv("OLLAMA_MODEL", "llama3.2") if os.getenv("LLM_PROVIDER") == "ollama" else os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 print("model:", model, "| minutes:", round((time.time() - t0) / 60, 1))
-json.dump(res, open("eval/graph_results.json", "w", encoding="utf-8"), indent=2)
+json.dump(res, open(GOLD.replace(".jsonl", "_results.json"), "w", encoding="utf-8"), indent=2)
 print("unscored errors:", errors)

@@ -1,0 +1,13 @@
+{"q":"Can my employer use my data without asking me?","type":"lookup","sections":["7"]}
+{"q":"My bank is opening an account for me. Do they have to tell me why they collect my data?","type":"lookup","sections":["5"]}
+{"q":"Can a 16-year-old sign up for an app on their own?","type":"multi","sections":["2","9"]}
+{"q":"Can an app show targeted ads to kids?","type":"lookup","sections":["9"]}
+{"q":"What happens if a company leaks my personal data?","type":"multi","sections":["8","Schedule"]}
+{"q":"I want my data deleted from an app I no longer use. What can I do?","type":"multi","sections":["12","8"]}
+{"q":"Who can I complain to if a company ignores my privacy request?","type":"multi","sections":["13","27"]}
+{"q":"If the Board makes a decision I disagree with, can I challenge it?","type":"lookup","sections":["29"]}
+{"q":"Can the government use my data without my consent for national security?","type":"multi","sections":["7","17"]}
+{"q":"Does the Act cover a foreign company that sells to Indian customers?","type":"lookup","sections":["3"]}
+{"q":"Is there a way to manage all my consents in one place?","type":"multi","sections":["6","2"]}
+{"q":"Who is the current Chairperson of the Data Protection Board?","type":"unanswerable","sections":[]}
+{"q":"What does the GDPR say about the right to be forgotten?","type":"unanswerable","sections":[]}
