@@ -1,0 +1,80 @@
+[
+  {
+    "q": "Can a company keep my data after I stop using their service?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. When you withdraw your consent, the data fiduciary must stop processing your personal data and must cause its data processors to do the same, **unless** the continued processing or retention is required or authorised by law.\u202fFor example, a bank must keep client identity records for ten\u202fyears after an account is closed because the law mandates that retention\u202f[Section\u202f8]. Otherwise, the fiduciary must erase the data after a reasonable time\u202f[Section\u202f6(6)] and cannot rely on the earlier consent to keep it\u202f[Section\u202f6(5)].\u202f[Section\u202f8, Section\u202f6]"
+  },
+  {
+    "q": "Is a company allowed to send my personal data to another country?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. Under the DPDP Act a Data\u202fFiduciary may transfer personal data to a country or territory outside India unless the Central Government has issued a notification restricting such transfer. The Act also allows the Government to apply any other Indian law that provides a higher level of protection, and certain exemptions (e.g., for legal or law\u2011enforcement purposes) may apply\u202f[Section\u202f16][Section\u202f17]."
+  },
+  {
+    "q": "Do I have to give true information when I ask a company to correct my records?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. When you ask a Data Fiduciary to correct your personal data, you are required to provide only information that is verifiably authentic. The Act imposes this duty on the Data Principal while exercising the right to correction or erasure.\u202f[Section 15]"
+  },
+  {
+    "q": "Can someone else manage my data rights if I become unable to?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. Under the DPDP Act you may nominate another person to exercise your data\u2011principal rights if you die or become unable to do so because of \u201cincapacity\u201d (i.e., unsoundness of mind or infirmity of body). The nominated individual will be able to act on your behalf in accordance with the Act\u2019s provisions.\u202f[Section 14]"
+  },
+  {
+    "q": "If I post my own phone number publicly on social media, does the Act still protect it?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "No.\u202fWhen a data principal voluntarily makes personal data\u2014such as a phone number\u2014publicly available on social media, the DPDP Act does not apply to that data. The Act expressly excludes personal data that is \u201cmade or caused to be made publicly available by\u2026 the Data Principal\u201d and gives an illustration of an individual blogging her own personal data, stating that the provisions of the Act shall not apply\u3010Section 3\u3011."
+  },
+  {
+    "q": "Can a former Board member immediately take a job at a company they investigated?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "No. Under the Act a former Chairperson or Member may not accept any employment for one year after leaving office unless they first obtain prior approval from the Central Government, and they must disclose any such employment if it is with a Data\u202fFiduciary against whom proceedings had been initiated while they were on the Board\u3010Section 22\u3011."
+  },
+  {
+    "q": "Can a hospital use my data without consent in a medical emergency?",
+    "type": "lookup",
+    "ok": false,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "If there is a dispute, who has to prove that I actually agreed to a company using my data?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "In a dispute over whether you (the Data\u202fPrincipal) actually consented to a company (the Data\u202fFiduciary) using your personal data, the **burden of proof falls on the Data\u202fFiduciary**. It must demonstrate that it gave you proper notice and that you gave consent in accordance with the Act and its rules\u3010Section 6, (10)\u3011."
+  },
+  {
+    "q": "Can an app stop working for me if I take back my consent?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "Yes. When you withdraw your consent, the data fiduciary may lawfully stop letting you use the app or website for the activities that required that consent (for example, placing new orders), although it can continue processing any data that was already collected for transactions that were completed before the withdrawal. This is expressly provided for in the Act\u2019s provisions on withdrawal of consent.\u202f[Section 6]\u202f[Section 5]"
+  },
+  {
+    "q": "Where does the money from penalties go?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "All monetary penalties collected under the DPDP Act are credited to the Consolidated Fund of India.\u202f[Section 34]"
+  },
+  {
+    "q": "Can I sue a company in a civil court instead of going to the Board?",
+    "type": "lookup",
+    "ok": true,
+    "answer": "No. Under the DPDP Act a civil court does not have jurisdiction to entertain any suit or proceeding that falls within the powers of the Data Protection Board of India.\u202fAll such matters must be dealt with before the Board, which is vested with powers akin to those of a civil court for the purposes of the Act\u3010Section 39\u3011."
+  },
+  {
+    "q": "What is the fee for registering as a Consent Manager?",
+    "type": "unanswerable",
+    "ok": true,
+    "answer": "Not found in the Act."
+  },
+  {
+    "q": "Recommend a good laptop for programming.",
+    "type": "offtopic",
+    "ok": true,
+    "answer": "I can only answer questions about the DPDP Act, 2023."
+  }
+]
