@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ClauseCite: ask the DPDP Act</title>
+<style>
+:root{--ink:#111318;--blue:#2f46ff;--yel:#ffe45c;--mute:#565c6b;--sans:"Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;--serif:Cambria,"Times New Roman",serif}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--ink);font:1.05rem/1.6 var(--sans)}
+main{max-width:1060px;margin:0 auto;padding:1.2rem 1.5rem 3rem}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem}
+.logo{font:800 1.45rem var(--sans);letter-spacing:-.03em;background:linear-gradient(transparent 60%,var(--yel) 60% 92%,transparent 92%);padding:0 .15em}
+.lnk{background:none;border:0;color:var(--blue);font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.hero{position:relative;overflow:hidden;background:var(--blue);color:#fff;border:2px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:clamp(1.4rem,4vw,2.6rem)}
+.hero::after{content:"§";position:absolute;right:1.2rem;top:-1.8rem;font:800 12rem/1 var(--serif);color:#ffffff1f;pointer-events:none}
+h1{margin:0 0 .8rem;max-width:14em;font:800 clamp(2rem,5.5vw,3.5rem)/1.04 var(--sans);letter-spacing:-.035em}
+.sub{margin:0 0 1.6rem;max-width:36rem;font-size:1.15rem;color:#e6e9ff}
+.ask{position:relative;z-index:1;display:flex;background:#fff;border:2px solid var(--ink);border-radius:12px;box-shadow:5px 5px 0 var(--ink);overflow:hidden}
+.ask:focus-within{outline:3px solid var(--yel);outline-offset:2px}
+#q{flex:1;min-width:0;resize:none;border:0;outline:0;background:none;color:var(--ink);font:500 1.2rem/1.4 var(--sans);padding:.9rem 1.1rem}
+#q::placeholder{color:#8a90a0}
+#go{background:var(--yel);color:var(--ink);border:0;border-left:2px solid var(--ink);padding:0 1.7rem;font:800 1.05rem var(--sans);cursor:pointer}
+#go:hover:not(:disabled){background:#ffd21a}
+#go:disabled{opacity:.5;cursor:wait}
+.hint{margin:1rem 0 0;font-size:.88rem;color:#d3d8ff;position:relative;z-index:1}
+.list{list-style:none;margin:.6rem 0 0;padding:0;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--ink);position:relative;z-index:2;overflow:hidden}
+.list[hidden]{display:none}
+.list button{all:unset;display:block;width:100%;padding:.55rem 1rem;cursor:pointer;font-size:.97rem}
+.list b{font-weight:700;margin-right:.7rem}
+.list li+li{border-top:1px solid #d9dce3}
+.list button:hover,.list button:focus-visible,.list .act button{background:var(--yel)}
+body{transition:padding-left .2s}
+#side{position:fixed;left:0;top:0;bottom:0;width:270px;background:#f3f4f8;border-right:2px solid var(--ink);padding:1rem;overflow-y:auto;transform:translateX(-100%);transition:transform .2s;z-index:20}
+body.side #side{transform:none}
+body.side{padding-left:270px}
+.new{width:100%;background:var(--ink);color:#fff;border:0;border-radius:10px;padding:.6rem;font:700 .95rem var(--sans);cursor:pointer;margin-bottom:1.2rem}
+.new:hover{background:var(--blue)}
+#side h2{font:800 .85rem var(--sans);color:var(--mute);margin:0 0 .5rem .2rem}
+#hist{list-style:none;margin:0;padding:0}
+#hist li{margin-bottom:.25rem}
+#hist button{all:unset;box-sizing:border-box;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;width:100%;padding:.5rem .6rem;border-radius:8px;cursor:pointer;font-size:.93rem;line-height:1.35}
+#hist button:hover{background:var(--yel)}
+#hist button:focus-visible{outline:3px solid var(--blue)}
+#hist .cur button{background:#fff;box-shadow:inset 0 0 0 2px var(--ink)}
+#hist .none{color:var(--mute);font-size:.9rem;padding:.3rem .2rem}
+@media(max-width:900px){body.side{padding-left:0}#side{box-shadow:6px 0 0 var(--ink)}}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sh{font:800 1.3rem var(--sans);letter-spacing:-.02em;margin:2.2rem 0 .9rem}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.1rem}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;display:block;background:var(--bg);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);padding:1rem 1.1rem;transition:transform .12s,box-shadow .12s}
+.tile:hover,.tile:focus-visible{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.tile:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.tile b{display:block;font:800 1.25rem var(--sans);letter-spacing:-.02em}
+.tile span{display:block;margin-top:.25rem}
+.cols{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:2.2rem;align-items:start;margin-top:2rem}
+aside{position:sticky;top:1rem}
+.asked{margin:0 0 .9rem;font-size:.98rem;color:var(--mute)}
+.asked b{color:var(--ink);margin-right:.4rem}
+.card{background:#fff;border:2px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:1.3rem 1.5rem}
+.card.soft{background:#fff3b0}
+.card p{margin:0 0 .9rem;font-size:1.15rem}
+.card .meta,.card .chk{font-size:.92rem}
+.w{opacity:0;animation:wd .3s ease forwards}
+@keyframes wd{to{opacity:1}}
+.cite{color:inherit;text-decoration:none;font-weight:700;padding:0 .2em;background:linear-gradient(transparent 52%,var(--yel) 52% 92%,transparent 92%) no-repeat;background-size:0 100%}
+.marked .cite{animation:mark .5s ease forwards;animation-delay:calc(var(--i)*.3s)}
+@keyframes mark{to{background-size:100% 100%}}
+.cite:hover,.cite:focus-visible{color:var(--blue)}
+.ok{display:inline-flex;align-items:center;gap:.4rem;background:#b9f0d4;border:2px solid var(--ink);border-radius:999px;padding:.1rem .75rem;font-weight:700;font-size:.85rem;margin:0 .5rem .5rem 0}
+.meta{color:var(--mute)}
+.next{display:flex;flex-wrap:wrap;gap:.5rem;margin:.3rem 0 .9rem}
+.next button{background:#fff;border:2px solid var(--ink);border-radius:999px;padding:.3rem .85rem;font:600 .9rem var(--sans);cursor:pointer;transition:background .12s}
+.next button:hover{background:var(--yel)}
+aside h2{font:800 1rem var(--sans);margin:0 0 .7rem}
+.note{background:var(--bg);border:2px solid var(--ink);border-radius:12px;padding:.9rem 1rem;margin-bottom:.9rem;transition:transform .12s,box-shadow .12s}
+.note.hl{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.note h3{font:800 1rem var(--sans);margin:0 0 .4rem}
+.note h3 span{font-weight:500;margin-left:.4rem}
+.clause{font:1.02rem/1.55 var(--serif);white-space:pre-line;margin:0 0 .3rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.note.open .clause{display:block}
+.note small{display:block;margin-top:.3rem;color:#3a3f4c}
+.status{margin:0 0 1rem!important}
+.status::after{content:"";display:inline-block;width:.5ch;height:1.05em;background:var(--ink);margin-left:.3ch;vertical-align:-.15em;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.bar{display:flex;gap:.4rem}
+.bar i{flex:1;height:.7rem;border:2px solid var(--ink);border-radius:99px;background:#fff;transition:background .3s}
+.bar i.on{background:var(--blue)}
+.ask-sel{position:absolute;z-index:9;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:.4rem .8rem;font:700 .85rem var(--sans);cursor:pointer;box-shadow:3px 3px 0 var(--blue)}
+.ask-sel[hidden]{display:none}
+.card.err{background:#ffc4b0}
+footer{margin-top:3.5rem;color:var(--mute);font-size:.85rem;max-width:38rem}
+@media(max-width:820px){.cols{grid-template-columns:1fr;gap:1.4rem}aside{position:static}.hero::after{font-size:8rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.w{opacity:1}.cite{background-size:100% 100%}}
+</style>
+</head>
+<body>
+<nav id="side" aria-label="History"><button class="new" id="nw">New question</button><h2>History</h2><ol id="hist"></ol><button class="lnk" id="clr" style="margin:1rem 0 0 .2rem;font-size:.85rem">Clear history</button></nav>
+<main>
+  <header class="top"><b class="logo">ClauseCite</b><button id="hb" class="lnk">History</button></header>
+  <section class="hero">
+    <h1>What does the law say about your data?</h1>
+    <p class="sub">Ask in plain words. Get an answer from India's Digital Personal Data Protection Act, 2023, with the exact sections it came from.</p>
+    <div class="ask"><textarea id="q" rows="2" aria-label="Your question about the Act" placeholder="Can my employer use my data without asking me?"></textarea><button id="go">Ask</button></div>
+    <ul id="find" class="list" hidden></ul>
+    <p class="hint">Enter to ask. Type a topic like consent to find its section. Press / to jump back here.</p>
+  </section>
+  <div id="out" aria-live="polite"></div>
+  <footer>Answers come from the text of the Act as on 19 November 2025. The DPDP Rules are not included. This is a research aid, not legal advice.</footer>
+</main>
+<script>
+const API = "";  // set to the API Gateway URL when deployed on AWS
+const $ = s => document.querySelector(s);
+const q = $("#q"), go = $("#go"), out = $("#out"), hist = $("#hist"), hb = $("#hb"), find = $("#find");
+const T = [
+  ["Consent", "Can I take my consent back?", "Can a Data Principal withdraw consent at any time?", "#ffe45c"],
+  ["Children", "Can apps track or target kids?", "Is tracking or behavioural monitoring of children allowed?", "#b9f0d4"],
+  ["Your rights", "How do I get my data deleted?", "What rights does a Data Principal have to correct or erase personal data?", "#ffc4b0"],
+  ["Data leaks", "What does a breach cost a company?", "What is the maximum penalty for failing to take reasonable security safeguards against a data breach?", "#d9ccff"],
+  ["Complaints", "Who do I complain to?", "Who can I complain to if a company ignores my privacy request?", "#bfe3ff"],
+  ["Government", "When can the State skip consent?", "Can the government use my data without my consent for national security?", "#ffd9a0"]
+];
+const ph = ["Can my employer use my data without asking me?", "Can an app show targeted ads to kids?", "What happens if a company leaks my data?", "How do I get my data deleted?"];
+const SEC = "1|Short title and commencement;2|Definitions;3|Application of Act;4|Grounds for processing personal data;5|Notice;6|Consent;7|Certain legitimate uses;8|General obligations of Data Fiduciary;9|Processing of personal data of children;10|Additional obligations of Significant Data Fiduciary;11|Right to access information about personal data;12|Right to correction and erasure of personal data;13|Right of grievance redressal;14|Right to nominate;15|Duties of Data Principal;16|Processing of personal data outside India;17|Exemptions;18|Establishment of Board;19|Composition and qualifications of the Board;20|Salary, allowances and term of office;21|Disqualifications of Board members;22|Resignation by Members and filling of vacancy;23|Proceedings of Board;24|Officers and employees of Board;25|Members and officers to be public servants;26|Powers of Chairperson;27|Powers and functions of Board;28|Procedure to be followed by Board;29|Appeal to Appellate Tribunal;30|Orders of Appellate Tribunal executable as decree;31|Alternate dispute resolution;32|Voluntary undertaking;33|Penalties;34|Penalties credited to Consolidated Fund of India;35|Protection of action taken in good faith;36|Power to call for information;37|Power of Central Government to issue directions;38|Consistency with other laws;39|Bar of jurisdiction;40|Power to make rules;41|Laying of rules and certain notifications;42|Power to amend Schedule;43|Power to remove difficulties;44|Amendments to certain Acts"
+  .split(";").map(x => { const [n, t] = x.split("|"); return { n, t }; });
+const msgs = ["Checking this is about the Act", "Searching the text", "Weighing what it found", "Writing the answer", "Checking the citations"];
+const tint = ["#ffe45c", "#b9f0d4", "#bfe3ff", "#ffc4b0"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const secs = t => (t.match(/\d+/g) || []).concat(/Schedule/.test(t) ? ["Schedule"] : []);
+const still = matchMedia("(prefers-reduced-motion:reduce)").matches;
+let n = 0, busy = false, fi = -1, fl = [], sel = "", pi = 0, curQ = "";
+const cache = new Map(), past = [], KEY = "clausecite_v1";
+try { const sv = JSON.parse(localStorage.getItem(KEY) || "{}"); (sv.past || []).forEach(p => past.push(p)); (sv.cache || []).forEach(([k, v]) => cache.set(k, v)); } catch (e) {}
+const save = () => { try { past.length = Math.min(past.length, 30); localStorage.setItem(KEY, JSON.stringify({ past, cache: past.map(p => [p.toLowerCase(), cache.get(p.toLowerCase())]).filter(x => x[1]) })); } catch (e) {} };
+const fmt = t => { n = 0; return esc(t).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+  .replace(/[\[\u3010]((?:Sections?|Schedule)[^\]\u3011]*)[\]\u3011]/g, (m, c) => { const s = secs(c); return `<a class="cite" href="#n-${s[0]}" style="--i:${n++}" data-s="${s}">${c}</a>`; })
+  .replace(/\n/g, "<br>"); };
+const label = s => /^\d+$/.test(s.section) ? "Section " + s.section : "The Schedule";
+const tiles = () => '<div class="tiles">' + T.map(t => `<button class="tile" style="--bg:${t[3]}" data-q="${esc(t[2])}"><b>${t[0]}</b><span>${t[1]}</span></button>`).join("") + "</div>";
+
+function reveal(el) {
+  const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), nodes = []; let i = 0;
+  while (w.nextNode()) nodes.push(w.currentNode);
+  nodes.forEach(t => {
+    const f = document.createDocumentFragment();
+    t.textContent.split(/(\s+)/).forEach(p => {
+      if (/^\s*$/.test(p)) { f.append(p); return; }
+      const s = document.createElement("span"); s.className = "w"; s.style.animationDelay = (i++ * 22) + "ms"; s.textContent = p; f.append(s);
+    });
+    t.replaceWith(f);
+  });
+  return i;
+}
+const home = () => { out.innerHTML = '<h2 class="sh">Start with a topic</h2>' + tiles(); };
+function renderHist() {
+  hist.innerHTML = past.length ? past.map((p, i) => `<li${p.toLowerCase() === curQ ? ' class="cur"' : ""}><button data-i="${i}">${esc(p)}</button></li>`).join("") : '<li class="none">Your questions will show up here.</li>';
+}
+function show(d, question) {
+  curQ = question.toLowerCase(); renderHist();
+  const soft = /^(I can only answer|Not found)/i.test(d.answer);
+  const ids = [...new Set(d.sources.map(s => s.section))].filter(s => /^\d+$/.test(s));
+  const next = ids.slice(0, 2).map(s => `<button data-q="Explain Section ${s} in simple words.">Explain Section ${s} simply</button>`)
+    .concat(ids[0] ? [`<button data-q="What exceptions apply to Section ${ids[0]}?">Exceptions to Section ${ids[0]}?</button>`] : []).join("");
+  const notes = d.sources.map((s, i) => `<article class="note" style="--bg:${tint[i % 4]}" id="n-${esc(s.section)}"><h3>${label(s)}<span>${esc(s.title)}</span></h3>${s.text ? `<p class="clause">${esc(s.text)}</p><button class="lnk more">Read more</button>` : ""}<small>Page ${s.page}</small></article>`).join("");
+  const ok = d.verified && d.sources.length ? '<span class="ok"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Citations verified</span>' : "";
+  out.innerHTML = `<div class="cols"><section class="ans"><p class="asked"><b>You asked</b>${esc(question)}</p>
+    <div class="card${soft ? " soft" : ""}"><p class="body">${fmt(d.answer)}</p>${ok}
+    ${d.retries ? `<span class="meta">Took ${d.retries} extra search${d.retries > 1 ? "es" : ""}.</span>` : ""}
+    ${!soft && next ? `<div class="next">${next}</div>` : ""}
+    ${soft ? "<p>Tip: describe the situation, such as an employer, a child, an app or a complaint, or pick a topic below.</p>" : '<button class="lnk" id="cp">Copy answer</button>'}</div>
+    ${soft ? '<h2 class="sh">Try a topic instead</h2>' + tiles() : ""}</section>
+    ${notes ? `<aside><h2>In the Act</h2>${notes}</aside>` : ""}</div>`;
+  const a = out.querySelector(".ans");
+  if (still) { a.classList.add("marked"); return; }
+  const words = reveal(out.querySelector(".body"));
+  setTimeout(() => { const x = out.querySelector(".ans"); if (x) x.classList.add("marked"); }, words * 22 + 250);
+}
+function fail(e) {
+  const net = e instanceof TypeError;
+  out.innerHTML = `<div class="cols"><div class="card err"><p>${net ? "Can't reach the server." : esc(e.message)}</p><p>${net ? "Check that it is running, then ask again." : "Wait a minute, then ask again."}</p></div></div>`;
+}
+async function ask(text) {
+  const question = (text || q.value).trim();
+  if (!question || busy) return;
+  q.value = question; find.hidden = true; fi = -1; if (innerWidth <= 900) document.body.classList.remove("side");
+  const key = question.toLowerCase();
+  if (cache.has(key)) { show(cache.get(key), question); return; }
+  busy = true; go.disabled = true;
+  out.innerHTML = `<div class="cols"><div class="card"><p class="status">${msgs[0]}</p><div class="bar">${msgs.map((_, k) => `<i class="${k ? "" : "on"}"></i>`).join("")}</div></div></div>`;
+  const st = out.querySelector(".status"), bars = out.querySelectorAll(".bar i"); let i = 0;
+  const tick = setInterval(() => { if (i < msgs.length - 1) { st.textContent = msgs[++i]; bars[i].classList.add("on"); } }, 1600);
+  try {
+    const r = await fetch(API + "/ask", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ question }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.detail || "Something went wrong.");
+    cache.set(key, d); past.unshift(question); save(); show(d, question);
+  } catch (e) { fail(e); }
+  clearInterval(tick); busy = false; go.disabled = false;
+}
+const pick = s => ask(`What does Section ${s.n} of the Act say?`);
+
+q.addEventListener("input", () => {
+  const ws = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  fl = q.value.trim().length < 2 || q.value.length > 40 ? [] : SEC.filter(s => ws.every(w => s.t.toLowerCase().includes(w) || s.n === w)).slice(0, 5);
+  fi = -1; find.hidden = !fl.length;
+  find.innerHTML = fl.map((s, i) => `<li><button data-i="${i}"><b>Section ${s.n}</b>${esc(s.t)}</button></li>`).join("");
+});
+q.addEventListener("keydown", e => {
+  if (!find.hidden && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
+    e.preventDefault(); fi = (fi + (e.key === "ArrowDown" ? 1 : -1) + fl.length) % fl.length;
+    [...find.children].forEach((li, i) => li.classList.toggle("act", i === fi)); return;
+  }
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); fi >= 0 ? pick(fl[fi]) : ask(); }
+});
+find.addEventListener("click", e => { const b = e.target.closest("button"); if (b) pick(fl[+b.dataset.i]); });
+
+const mark = (e, on) => { const c = e.target.closest(".cite"); if (c) c.dataset.s.split(",").forEach(s => { const x = document.getElementById("n-" + s); if (x) x.classList.toggle("hl", on); }); };
+out.addEventListener("mouseover", e => mark(e, true));
+out.addEventListener("mouseout", e => mark(e, false));
+out.addEventListener("click", e => {
+  const c = e.target.closest(".cite");
+  if (c) {
+    e.preventDefault();
+    const x = document.getElementById("n-" + c.dataset.s.split(",")[0]);
+    if (x) { x.classList.add("open"); const m = x.querySelector(".more"); if (m) m.textContent = "Show less"; x.scrollIntoView({ behavior: "smooth", block: "center" }); }
+  }
+  const m = e.target.closest(".more");
+  if (m) m.textContent = m.closest(".note").classList.toggle("open") ? "Show less" : "Read more";
+  const t = e.target.closest(".tile, .next button"); if (t) ask(t.dataset.q);
+  const cp = e.target.closest("#cp");
+  if (cp) { navigator.clipboard.writeText(out.querySelector(".body").innerText); cp.textContent = "Copied"; setTimeout(() => cp.textContent = "Copy answer", 1500); }
+});
+hist.addEventListener("click", e => { const b = e.target.closest("button"); if (b) ask(past[+b.dataset.i]); });
+hb.onclick = () => document.body.classList.toggle("side");
+go.onclick = () => ask();
+
+const sb = document.createElement("button");
+sb.className = "ask-sel"; sb.hidden = true; sb.textContent = "Ask about this"; document.body.append(sb);
+document.addEventListener("mouseup", e => {
+  if (e.target === sb) return;
+  const s = getSelection(), t = s.toString().trim();
+  if (t.length > 8 && t.length < 300 && s.anchorNode && out.contains(s.anchorNode)) {
+    const r = s.getRangeAt(0).getBoundingClientRect();
+    sel = t; sb.style.left = scrollX + r.left + "px"; sb.style.top = scrollY + r.bottom + 8 + "px"; sb.hidden = false;
+  } else sb.hidden = true;
+});
+sb.onclick = () => { sb.hidden = true; getSelection().removeAllRanges(); ask(`In the DPDP Act, 2023, what does this mean: "${sel}"`); };
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement !== q) { e.preventDefault(); q.focus(); q.select(); }
+  if (e.key === "Escape") { q.blur(); find.hidden = true; }
+});
+setInterval(() => { if (document.activeElement !== q && !q.value) q.placeholder = ph[pi = (pi + 1) % ph.length]; }, 3200);
+$("#nw").onclick = () => { q.value = ""; curQ = ""; find.hidden = true; home(); renderHist(); q.focus(); if (innerWidth <= 900) document.body.classList.remove("side"); };
+$("#clr").onclick = () => { past.length = 0; cache.clear(); curQ = ""; try { localStorage.removeItem(KEY); } catch (e) {} renderHist(); home(); };
+if (innerWidth > 900) document.body.classList.add("side");
+renderHist();
+home();
+</script>
+</body>
+</html>
