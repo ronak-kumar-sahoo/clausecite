@@ -1,4 +1,4 @@
-import os
+import os, traceback
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
@@ -23,6 +23,7 @@ def ask(q: Q):
     try:
         out = graph.invoke({"question": question})
     except Exception:
+        traceback.print_exc()
         raise HTTPException(status_code=503, detail="The language model is busy or unavailable. Please try again shortly.")
     answer = out.get("answer", "")
     cited, seen, sources = citations(answer), set(), []
@@ -34,5 +35,7 @@ def ask(q: Q):
     return {"answer": answer, "sources": sources, "retries": out.get("retries", 0),
             "verified": out.get("verified"), "disclaimer": "Informational only, not legal advice."}
 
-web_dir = os.path.join(os.path.dirname(__file__), "..", "web")
+web_dir = os.path.join(os.path.dirname(__file__), "web")
+if not os.path.isdir(web_dir):
+    web_dir = os.path.join(os.path.dirname(__file__), "..", "web")
 api.mount("/", StaticFiles(directory=web_dir, html=True), name="web")

@@ -1,4 +1,4 @@
-import re
+import os, re
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
@@ -8,7 +8,7 @@ from sentence_transformers import CrossEncoder
 P = "Represent this sentence for searching relevant passages: "
 _emb = HuggingFaceEmbeddings(model_name="BAAI/bge-small-en-v1.5",
                              encode_kwargs={"normalize_embeddings": True})
-_db = Chroma(persist_directory="chroma_db", embedding_function=_emb, collection_name="dpdp")
+_db = Chroma(persist_directory=os.environ.get("CHROMA_DIR", "chroma_db"), embedding_function=_emb, collection_name="dpdp")
 _all = _db.get()
 _docs = list(zip(_all["documents"], _all["metadatas"]))
 _key = lambda m: (m["section"], m["part"])
