@@ -1,0 +1,23 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+      - uses: aws-actions/amazon-ecr-login@v2
+        id: ecr
+      - name: Build, push and update Lambda
+        run: |
+          IMAGE=${{ steps.ecr.outputs.registry }}/clausecite:latest
+          docker build --provenance=false -t $IMAGE .
+          docker push $IMAGE
+          aws lambda update-function-code --function-name clausecite --image-uri $IMAGE
